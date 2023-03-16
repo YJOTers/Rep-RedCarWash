@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.RegistroDeVehiculo"
+             Title="REGISTRO DE VEHICULO">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid Padding="20" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="159"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Entry x:Name="Placa" Placeholder="Placa" TextColor="Black" FontSize="Subtitle" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Entry x:Name="Cliente" Placeholder="Cliente" Keyboard="Text" TextColor="Black" FontSize="Subtitle" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Picker x:Name="ListaTipoDeVehiculo" SelectedIndexChanged="BtnSeleccionarTipoDeVehiculo"  Title="Tipo de vehiculo" FontSize="Subtitle" TextColor="Black" Grid.Row="2" Grid.Column="0"/>
+                <ImageButton Source="desplegar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnListaTipoDeVehiculo" Grid.Row="2" Grid.Column="1"/>
+                <Picker x:Name="ListaColorDeVehiculo" SelectedIndexChanged="BtnSeleccionarColorDeVehiculo"  Title="Color" FontSize="Subtitle" TextColor="Black" Grid.Row="3" Grid.Column="0"/>
+                <ImageButton Source="desplegar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnListaColorDeVehiculo" Grid.Row="3" Grid.Column="1"/>
+                <Picker x:Name="ListaMarcaDeVehiculo" SelectedIndexChanged="BtnSeleccionarMarcaDeVehiculo"  Title="Marca" FontSize="Subtitle" TextColor="Black" Grid.Row="4" Grid.Column="0"/>
+                <ImageButton Source="desplegar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnListaMarcaDeVehiculo" Grid.Row="4" Grid.Column="1"/>
+                <ImageButton Source="guardar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnGuardar" Grid.Row="5" Grid.Column="0"/>
+                <ImageButton Source="eliminar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnEliminar" Grid.Row="5" Grid.Column="1"/>
+                <ListView x:Name="ListaRegDeVehiculo" BackgroundColor="White" ItemSelected="BtnEditar" Grid.Row="6" Grid.ColumnSpan="2">
+                    <ListView.Header>
+                        <Label Text="Lista de vehiculos" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding id_rv}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                    <Label Text="{Binding placa_rv}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                    <Label Text="{Binding nombreMarca_marca}" TextColor="Black" FontSize="Subtitle" Grid.Column="2"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

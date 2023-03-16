@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="Red_Car_Wash.Vista.RegistroDeEmpleado"
+             Title="REGISTRO DE EMPLEADO">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid Padding="20" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="159"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <DatePicker x:Name="Fecha" Format="dd/MM/yyyy" MinimumDate="{x:Static system:DateTime.Today}" TextColor="Black" FontSize="Subtitle" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Entry x:Name="Cedula" Placeholder="Cedula" Keyboard="Numeric" TextColor="Black" FontSize="Subtitle" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Entry x:Name="Nombres" Placeholder="Nombres" Keyboard="Text" TextColor="Black" FontSize="Subtitle" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Entry x:Name="Apellidos" Placeholder="Apellidos" Keyboard="Text" TextColor="Black" FontSize="Subtitle" Grid.Row="3" Grid.ColumnSpan="2"/>
+                <Entry x:Name="SueldoAcordado" Placeholder="Sueldo Acordado" Keyboard="Numeric" TextColor="Black" FontSize="Subtitle" Grid.Row="4" Grid.ColumnSpan="2"/>
+                <ImageButton Source="guardar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnGuardar" Grid.Row="5" Grid.Column="0"/>
+                <ImageButton Source="eliminar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnEliminar" Grid.Row="5" Grid.Column="1"/>
+                <ListView x:Name="ListaEmpleados" BackgroundColor="White" ItemSelected="BtnEditar" Grid.Row="6" Grid.ColumnSpan="2">
+                    <ListView.Header>
+                        <Label Text="Lista de empleados" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding id_re}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                    <Label Text="{Binding nombres_re}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                    <Label Text="{Binding apellidos_re}" TextColor="Black" FontSize="Subtitle" Grid.Column="2"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

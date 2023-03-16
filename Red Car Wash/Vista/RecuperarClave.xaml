@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.RecuperarClave"
+             Title="RECUPERAR CLAVE">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.jpeg" Aspect="AspectFill"/>
+            <Frame CornerRadius="20" VerticalOptions="Center" Margin="20" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+                <StackLayout Padding="0" Spacing="10">
+                    <Label Text="Ingrese su correo de usuario" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold"/>
+                    <Entry x:Name="Correo" Placeholder="Correo" Keyboard="Email" FontSize="Subtitle"/>
+                    <Button Text="Recuperar clave" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnRecuperarClave"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
