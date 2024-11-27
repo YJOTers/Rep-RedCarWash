@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Red_Car_Wash.Vista.Informes"
+             Title="INFORME">
+    <ContentPage.Content>
+        <StackLayout Spacing="30" Padding="20" BackgroundColor="White">
+            <Picker x:Name="ListaAnio" SelectedIndexChanged="BtnSeleccionarAnio"  Title="Año" FontSize="Subtitle" TextColor="Black"/>
+            <Picker x:Name="ListaMes" SelectedIndexChanged="BtnSeleccionarMes"  Title="Mes" FontSize="Subtitle" TextColor="Black"/>
+            <microcharts:ChartView x:Name="GraficoEstadistico" HeightRequest="300"/>
+            <Button Text="Ver" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnVer"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.InformeMes">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="TablaDeInforme">
+                    <ListView.Header>
+                        <Label Text="Información del mes" HorizontalTextAlignment="Center" 
+                               TextColor="Black" FontAttributes="Bold"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="30,2,30,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="40*"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="30"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding fecha_inf, StringFormat='{0:dd/MM/yyyy}'}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                    <Label Text="{Binding actividad_inf}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                    <Label Text="{Binding tipo_inf}" TextColor="Black" FontSize="Subtitle" Grid.Column="2"/>
+                                    <Label Text="{Binding usuario_inf}" TextColor="Black" FontSize="Subtitle" Grid.Column="3"/>
+                                    <Label Text="{Binding total_inf}" TextColor="Black" FontSize="Subtitle" Grid.Column="4"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

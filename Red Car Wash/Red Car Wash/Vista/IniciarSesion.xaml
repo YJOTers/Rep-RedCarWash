@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.IniciarSesion"
+             Title="INICIO DE SESIÓN">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.jpeg" Aspect="AspectFill"/>
+            <Frame CornerRadius="20" VerticalOptions="Center" Margin="20" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+                <Grid Padding="10,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Bienvenido, inicie sesion" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <Entry x:Name="Correo" Placeholder="Ingrese su correo" Keyboard="Email" FontSize="Subtitle" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Entry x:Name="Clave" Placeholder="Ingrese su clave" FontSize="Subtitle" IsPassword="True" Grid.Row="2" Grid.Column="0"/>
+                    <Button Text="Ver" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnVerClave" Grid.Row="2" Grid.Column="1"/>
+                    <Button Text="Iniciar sesión" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnIniciarSesion" Grid.Row="3" Grid.ColumnSpan="2"/>
+                    <Button Text="Registrarse" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnRegistrarse" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <Button Text="Recuperar clave" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnRecuperarClave" Grid.Row="5" Grid.ColumnSpan="2"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

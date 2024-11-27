@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.TipoDePago"
+             Title="TIPO DE PAGO">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid Padding="20" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="159"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Entry x:Name="Tipo" Placeholder="Tipo de pago" Keyboard="Text" TextColor="Black" FontSize="Subtitle" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <ImageButton Source="guardar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnGuardar" Grid.Row="1" Grid.Column="0"/>
+                <ImageButton Source="eliminar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnEliminar" Grid.Row="1" Grid.Column="1"/>
+                <ListView x:Name="ListaTipoDePago" BackgroundColor="White" ItemSelected="BtnEditar" Grid.Row="2" Grid.ColumnSpan="2">
+                    <ListView.Header>
+                        <Label Text="Tipos de pagos" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding id_tdp}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                    <Label Text="{Binding tipoDePago_tdp}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

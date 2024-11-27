@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="Red_Car_Wash.Vista.Personal"
+             Title="PERSONAL">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid Padding="20" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="159"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <DatePicker x:Name="Fecha" Format="dd/MM/yyyy" MinimumDate="{x:Static system:DateTime.Today}" TextColor="Black" FontSize="Subtitle" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Picker x:Name="ListaEmpleados" SelectedIndexChanged="BtnSeleccionarEmpleado" Title="Empleado" TextColor="Black" FontSize="Subtitle" Grid.Row="1" Grid.Column="0"/>
+                <ImageButton Source="desplegar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnListaEmpleados" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="Cedula" Placeholder="Cédula" IsReadOnly="True" TextColor="Black" FontSize="Subtitle" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Picker x:Name="ListaTipoDePago" SelectedIndexChanged="BtnSeleccionarTipoDePago" Title="Tipo de Pago" TextColor="Black" FontSize="Subtitle" Grid.Row="3" Grid.Column="0"/>
+                <ImageButton Source="desplegar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnListaTipoDePago" Grid.Row="3" Grid.Column="1"/>
+                <Entry x:Name="Valor" Placeholder="Valor" Keyboard="Numeric" TextColor="Black" FontSize="Subtitle" Grid.Row="4" Grid.ColumnSpan="2"/>
+                <ImageButton Source="guardar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnGuardar" Grid.Row="5" Grid.Column="0"/>
+                <ImageButton Source="eliminar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnEliminar" Grid.Row="5" Grid.Column="1"/>
+                <ListView x:Name="ListaPersonal" BackgroundColor="White" ItemSelected="BtnEditar" Grid.Row="6" Grid.ColumnSpan="2">
+                    <ListView.Header>
+                        <Label Text="Lista del personal" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding id_personal}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                    <Label Text="{Binding nombres_re}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                    <Label Text="{Binding apellidos_re}" TextColor="Black" FontSize="Subtitle" Grid.Column="2"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

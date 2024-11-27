@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.Registrarse"
+             Title="REGISTRO DE USUARIO">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.jpeg" Aspect="AspectFill"/>
+            <Frame CornerRadius="20" VerticalOptions="Center" Margin="20" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+                <StackLayout Padding="0" Spacing="10">
+                    <Label Text="Crear cuenta" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold"/>
+                    <Entry x:Name="Usuario" Placeholder="Ingrese el usuario" FontSize="Subtitle"/>
+                    <Entry x:Name="Correo" Placeholder="Ingrese el correo" Keyboard="Email" FontSize="Subtitle"/>
+                    <Entry x:Name="Clave" Placeholder="Ingrese la clave" FontSize="Subtitle" IsPassword="True"/>
+                    <Button Text="Registrarse" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20" Clicked="BtnRegistrarse"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

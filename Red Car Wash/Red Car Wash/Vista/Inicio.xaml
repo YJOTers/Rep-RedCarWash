@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Red_Car_Wash.Vista.Inicio"
+            NavigationPage.HasNavigationBar="False">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="INICIO">
+            <ContentPage.Content>
+                <StackLayout BackgroundColor="White" Padding="20, 160">
+                    <Label x:Name="Usuario" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="Correo" TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                    <Button Text="NEGOCIO" Clicked="BtnNegocio" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20"/>
+                    <Button Text="USUARIO" Clicked="BtnUsuario" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20"/>
+                    <Button Text="CERRAR SESION" Clicked="BtnCerrarSesion" BackgroundColor="DarkRed" TextColor="White" CornerRadius="20"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Title="INICIO">
+                    <ContentPage.Content>
+                        <Grid>
+                            <Image Source="fondo.jpeg" Aspect="AspectFill"/>
+                            <Frame CornerRadius="20" VerticalOptions="Center" Margin="20" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+                                <StackLayout Padding="0" Spacing="10">
+                                    <Image Source="logo.jpg" WidthRequest="250" HeightRequest="101" HorizontalOptions="Center"/>
+                                    <Label Text="BIENVENIDO A RED CAR WASH" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                    <Label Text="Con esta aplicación usted podra administrar todas sus operaciones relacionadas al negocio de lavado de autos." 
+                                   TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="Center" MaxLines="4"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ContentPage.Content>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

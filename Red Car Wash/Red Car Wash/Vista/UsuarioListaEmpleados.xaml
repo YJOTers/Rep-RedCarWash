@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Red_Car_Wash.Vista.UsuarioListaEmpleados"
+             Title="GESTIONAR USUARIOS">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.jpeg" Aspect="AspectFill"/>
+            <Frame CornerRadius="20" VerticalOptions="Center" Margin="30" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+                <ScrollView>
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Agrege o elimine sus usuarios" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <Entry x:Name="Usuario" Placeholder="Ingrese el usuario" FontSize="Subtitle" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <Entry x:Name="Correo" Placeholder="Ingrese el correo" Keyboard="Email" FontSize="Subtitle" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <Entry x:Name="Clave" Placeholder="Ingrese la clave" FontSize="Subtitle" IsPassword="True" Grid.Row="3" Grid.ColumnSpan="2"/>
+                        <ImageButton Source="guardar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnGuardar" Grid.Row="4" Grid.Column="0"/>
+                        <ImageButton Source="eliminar.png" Aspect="AspectFit" BackgroundColor="White" CornerRadius="20" Clicked="BtnEliminar" Grid.Row="4" Grid.Column="1"/>
+                        <ListView x:Name="ListaEmpleados" BackgroundColor="White" ItemSelected="BtnEditar" Grid.Row="5" Grid.ColumnSpan="2">
+                            <ListView.Header>
+                                <Label Text="Lista de usuarios" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="10,0,10,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20*"/>
+                                                <ColumnDefinition Width="200"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding id_uc}" TextColor="Black" FontSize="Subtitle" Grid.Column="0"/>
+                                            <Label Text="{Binding usuario_uc}" TextColor="Black" FontSize="Subtitle" Grid.Column="1"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </ScrollView>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
